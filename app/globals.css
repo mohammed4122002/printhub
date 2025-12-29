@@ -1,26 +1,104 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+    --primary: #E867EA;
+    --secondary: #20DCFB;
+    --body-color: #060A10;
+    --white: #fff;
+    --black: #000;
+
+    /* font variables are provided by next/font in `app/layout.tsx` */
+
+    --transition-regular: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 0.7s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+.Syne { font-family: var(--font-cairo), system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; }
+.StoryScript { font-family: var(--font-amiri), 'Times New Roman', Times, serif; }
+.Inter { font-family: var(--font-arabic), system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif; }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+    scroll-behavior: smooth;
+    box-sizing: border-box; /* لضمان عدم تأثر الأبعاد بالـ padding */
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+    background: var(--body-color);
+    color: var(--white);
+    overflow-x: hidden;
+}
+
+/* Navbar */
+
+.nav-menu {
+    position: relative;
+    padding: 8px 12px; /* زيادة المساحة قليلاً لشكل أجمل */
+    transition: color var(--transition-regular);
+    display: inline-block;
+    cursor: pointer;
+}
+
+.nav-menu::after,
+.nav-menu::before {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 0;
+    transition: var(--transition-regular);
+    opacity: 0;
+}
+
+/* الخط العلوي - لون ثانوي */
+.nav-menu::after {
+    top: 0;
+    left: 0;
+    background-color: var(--secondary);
+    box-shadow: 0 0 8px var(--secondary); /* تأثير توهج */
+}
+
+/* الخط السفلي - لون أساسي */
+.nav-menu::before {
+    bottom: 0;
+    right: 0;
+    background-color: var(--primary);
+    box-shadow: 0 0 8px var(--primary); /* تأثير توهج */
+}
+
+/* تأثير الـ Hover والحالة النشطة */
+.nav-menu:hover::after,
+.nav-menu:hover::before,
+.nav-menu.active-nav::after,
+.nav-menu.active-nav::before {
+    width: 100%;
+    opacity: 1;
+}
+
+/* تغيير لون النص عند الـ Hover (اختياري) */
+.nav-menu:hover {
+    color: var(--secondary);
+}
+
+/* Arabic font helper */
+.Arabic { font-family: var(--font-arabic), var(--Inter), sans-serif; }
+
+/* Improved UI: buttons and navbar layout */
+.btn {
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    color: var(--black);
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+    transition: transform var(--transition-regular), box-shadow var(--transition-regular);
+}
+.btn:hover { transform: translateY(-3px); box-shadow: 0 14px 30px rgba(0,0,0,0.45); }
+
+.navbar-container { display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:12px 6%; }
+.site-brand { font-weight:700; letter-spacing:0.6px; }
+
+/* Small responsive tweaks */
+@media (max-width: 640px) {
+    .navbar-container { padding-inline: 1rem; }
+    .nav-menu { padding: 6px 8px; }
 }
