@@ -7,11 +7,11 @@ const Hero = () => {
       {/* إضافة dir="rtl" لضبط الاتجاه */}
       <div
         dir="rtl"
-        className="Hero section-bg px-[8%] lg:px-[12%] py-20 lg:py-32 mt-25"
+        className="Hero section-bg px-[8%] lg:px-[12%] py-20 lg:py-32  mt-30 md:mt-0 "
       >
-        <div className="w-full flex flex-col lg:flex-row justify-between items-center gap-10">
+        <div className="w-full flex flex-col justify-between lg:flex-row  items-center gap-10">
           {/* القسم النصي */}
-          <div className="w-full lg:w-1/2 text-right">
+          <div className="w-full lg:w-1/2  text-center lg:text-right">
             <h4 className="text-(--secondary) Inter uppercase text-xl font-medium tracking-wide">
               من الفكرة إلى الواقع
             </h4>
@@ -20,12 +20,12 @@ const Hero = () => {
               <span className="text-cyan-400">الطباعة ثلاثية الأبعاد</span>
             </h1>
 
-            <div className="flex flex-wrap items-center gap-5 Inter">
+            <div className="flex flex-wrap items-center gap-5 Inter justify-center lg:justify-start ">
               <button className=" px-10 py-3 border border-(--primary) bg-(--primary) rounded-full text-xl hover:bg-transparent text-white cursor-pointer transition-all duration-300 shadow-lg shadow-cyan-500/20">
                 استكشف خدماتنا
               </button>
 
-              <button className="Inter px-10 py-3 border border-(--primary) bg-transparent rounded-full text-xl hover:bg-(--primary) text-white cursor-pointer transition-all duration-300 flex items-center gap-2">
+              <button className=" px-10 py-3 border border-(--primary) bg-transparent rounded-full text-xl hover:bg-(--primary) text-white cursor-pointer transition-all duration-300 flex items-center gap-2">
                 <i className="bi bi-play-fill text-2xl rotate-180"></i> شاهد
                 الفيديو
               </button>

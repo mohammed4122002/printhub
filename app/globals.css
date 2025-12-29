@@ -102,3 +102,18 @@ body {
     .navbar-container { padding-inline: 1rem; }
     .nav-menu { padding: 6px 8px; }
 }
+
+.Hero {
+min-height: 100vh;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.section-bg {
+    background-image: 
+        radial-gradient(at center center, #02010100 0%, #060A10 65%), 
+        url("/bg-element.png");
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
