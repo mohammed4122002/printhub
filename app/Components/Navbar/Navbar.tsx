@@ -77,13 +77,32 @@ const Navbar = () => {
           </a>
         </div>
 
-        {/* زر القائمة للموبايل */}
+     {/* زر القائمة للموبايل */}
         <button 
           onClick={() => setMenuOpen(!menuOpen)}
-          className="text-white text-3xl lg:hidden focus:outline-none transition-transform duration-300 hover:scale-110"
+          className="text-white text-3xl lg:hidden focus:outline-none transition-transform duration-300"
         >
-          <i className={`bi ${menuOpen ? "bi-x" : "bi-list"}`}></i>
+          <i className={`bi ${menuOpen ? "bi-x-lg" : "bi-distribute-vertical text-cyan-400"}`}></i>
         </button>
+      </div>
+
+      {/* قائمة الموبايل المنسدلة */}
+      <div className={`lg:hidden absolute top-full left-0 w-full bg-black/95 backdrop-blur-xl transition-all duration-500 overflow-hidden ${
+        menuOpen ? "max-h-[500px] border-b border-white/10" : "max-h-0"
+      }`}>
+        <ul className="flex flex-col items-center py-10 gap-6">
+          {menuItems.map((item, i) => (
+            <li key={i}>
+              <a
+                href={`#${i}`}
+                onClick={() => { setActiveItem(item); setMenuOpen(false); }}
+                className="text-2xl font-bold text-white hover:text-cyan-400 transition-colors"
+              >
+                {item}
+              </a>
+            </li>
+          ))}
+        </ul>
       </div>
     </nav>
   );
