@@ -100,7 +100,7 @@ const FeatureItem = ({ text, delay }: { text: string; delay: number }) => (
     viewport={{ once: true }}
     className="flex items-center gap-3 text-white/90 text-lg hover:text-(--secondary) transition-colors cursor-default"
   >
-    <i className="bi bi-check-circle-fill text-(--secondary)"></i>
+    <i className="bi bi-check-square  text-(--secondary)"></i>
     <span>{text}</span>
   </motion.h2>
 );
