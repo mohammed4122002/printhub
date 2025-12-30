@@ -128,3 +128,38 @@ justify-content: center;
     
 
 }
+
+
+
+
+/* تأثير اللمعان المتحرك فوق الشريط */
+.rang-bar-fill::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  animation: progress-shine 3s infinite;
+}
+
+@keyframes progress-shine {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* تعديل الـ section-bg لضمان ظهور الصورة الخلفية */
+.section-bg {
+    position: relative;
+    background-image: 
+        radial-gradient(at center center, rgba(2, 1, 1, 0) 0%, #060A10 75%), 
+        url("/bg-element.png");
+    background-size: cover;
+    background-position: center;
+}
