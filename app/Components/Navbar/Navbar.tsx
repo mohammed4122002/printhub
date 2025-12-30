@@ -29,7 +29,7 @@ const Navbar = () => {
         
         {/* الشعار - Logo */}
         <div className="flex flex-col leading-tight">
-          <button onClick={handleLogoClick} className="italic font-bold text-4xl StoryScript text-white drop-shadow-md cursor-pointer">
+          <button onClick={handleLogoClick} className="italic font-bold text-4xl StoryScript  text-white drop-shadow-md cursor-pointer">
           <span className="text-cyan-400">print</span>Hub
             <span className="text-cyan-400">3D</span>
           </button>

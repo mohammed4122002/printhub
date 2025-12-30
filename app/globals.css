@@ -117,3 +117,14 @@ justify-content: center;
     background-position: center;
     z-index: 1;
 }
+
+/* About */
+
+.counter h2 , 
+.counter span{
+    color : transparent ;
+    -webkit-text-stroke-width:1px ;
+    -webkit-text-stroke-color: var(--white);
+    
+
+}
